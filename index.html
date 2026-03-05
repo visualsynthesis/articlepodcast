@@ -26,18 +26,33 @@
   }
 
   .logo {
-    font-size: 48px;
-    font-weight: 300;
-    letter-spacing: -1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 32px;
     transition: all 0.4s ease;
   }
 
-  .logo span { color: #ea4335; }
-  .logo em { font-style: normal; color: #4285f4; }
-  .logo b { font-weight: 400; color: #34a853; }
+  .logo img {
+    width: 96px;
+    height: 96px;
+    transition: all 0.4s ease;
+  }
 
-  body.has-result .logo { font-size: 28px; margin-bottom: 20px; }
+  .logo .text {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    transition: all 0.4s ease;
+  }
+
+  .logo .text span { color: #3367d6; }
+  .logo .text b { font-weight: 400; color: #4285f4; }
+
+  body.has-result .logo { flex-direction: row; gap: 10px; margin-bottom: 20px; }
+  body.has-result .logo img { width: 36px; height: 36px; }
+  body.has-result .logo .text { font-size: 28px; }
 
   .search-box {
     display: flex;
@@ -237,7 +252,10 @@
 </head>
 <body>
 
-<div class="logo"><span>Article</span> <b>Podcast</b></div>
+<div class="logo">
+  <img src="favicon-preview.png" alt="Article Podcast">
+  <div class="text"><span>Article</span> <b>Podcast</b></div>
+</div>
 
 <div class="search-box">
   <input type="text" id="urlInput" placeholder="Paste an article URL..." autofocus>
